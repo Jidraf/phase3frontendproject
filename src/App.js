@@ -4,7 +4,8 @@ import { BrowserRouter, Link, Route, Routes} from 'react-router-dom';
 import NavBar from './Components/NavBar/NavBar';
 import Coaches from './Components/Coaches/Coaches';
 import Players from './Components/Players/Players';
-
+import Home from './Components/Home/Home';
+import Teams from './Components/Teams/Teams';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
     <Route path='/Coaches' element={<Coaches />}/>
     <Route path='/Teams' element={<Teams />}/>
     </Routes>
-    
+
     </BrowserRouter>
     </div>
   );
