@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+body{
+  width: auto;
+  background-image: url('https://imgresizer.eurosport.com/unsafe/1280x960/smart/filters:format(jpeg)/origin-imgresizer.eurosport.com/2021/07/30/3187052-65296308-2560-1440.jpg');
+  color: aliceblue;
+
+}
