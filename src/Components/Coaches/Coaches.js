@@ -4,26 +4,51 @@ import './Coaches.css'
 
 function Coaches(){
 
-    const [coach, setCoach] = useState({});
+    const [coaches, setCoaches] = useState('');
+    const [addForm, setForm] = useState({
+        name:'',  });
 
-    useEffect(()=> {
-        fetch('http://localhost:9292/coach')
-        .then((res)=>res.json())
-        .then((Data)=>setCoach(Data))
-        },[]);
-
-    function teamCoach(){
-        console.log(coach);
+        const handleAddForm = (event) => {
+            event.preventDefault();
+    
+            const name1 =event.target.getAttribute('name');
+            const value1 = event.target.value;
+    
+            const newForm = {...addForm};
+            newForm[name1] = value1;
+            setForm(newForm);
+    
+        }
+    
+        const handleAddFormSubmit = (event) => {
+            event.preventDefault();
+    
+            const newCoach = {
+                name: addForm.name}
+                const newCoach1 = [...coaches,newCoach]
+        setCoaches(newCoach1)
     }
-
+    
     return(
-        <div className="coach"> 
-     <label>TeamCoach</label>
-      <input type="text" onChange={(event) => {setCoach(event.target.value);}}/>  
-      <button onClick={teamCoach}>Add</button> 
-      <button onClick={teamCoach}> Edit</button>
-      <button onClick={teamCoach}>Delete</button>
-        </div>
+        <div className="coach">
+            <form onSubmit={handleAddFormSubmit}>
+            <input type="text" name="coach name" className="form-control" required="required" placeholder="Enter Coach Name..." onChange={handleAddForm} />
+            </form>
+       <table>
+      <thead>
+        <tr>
+          <th>NAME</th>
+          <th></th>
+        </tr>
+    </thead>
+    <tbody>
+             <tr>
+             <td>Name</td> 
+             <td><button type="button" className="btn btn-outline-primary" >Add</button></td>
+           </tr>
+    </tbody>
+    </table>
+          </div>
     );
 }
 

@@ -6,8 +6,8 @@ import "./Home.css"
 
 function Home() {
   return (
-    <div>
-        <img src='{img1} alt="topteams'/>
+    <div className='home'>
+        The App is supposed to assist football fans to be updated by their favourite team's players and coach 
     </div>
   )
 }
