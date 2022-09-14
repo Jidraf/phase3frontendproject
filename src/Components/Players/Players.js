@@ -5,15 +5,15 @@ import './Players.css'
 function Players(){
     const [players, setPlayers] = useState([]);
     const [addForm, setForm] = useState({
-        player_name:'',
-        player_age:'',
-        player_position:''
+        player_name: "",
+        player_age: "",
+        player_position:""
     });
 
     const handleAddForm = (event) => {
         event.preventDefault();
         
-        const name1 =event.target.getAttribute('name');
+        const name1 =event.target.getAttribute('player_name');
         const value1 = event.target.value;
 
         const newForm = {...addForm};
